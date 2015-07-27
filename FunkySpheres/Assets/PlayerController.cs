@@ -4,10 +4,10 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
 
-	private float moveSpeed = 5;
+	private float moveSpeed = 7;
 	private Vector3 moveDirection;
 	private float distToGround = 1;
-	private float jumpSpeed = 500; 
+	private float jumpSpeed = 7; 
 	private float rigid;
 	private Rigidbody rb;
 	private float wait = 2;

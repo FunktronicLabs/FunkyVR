@@ -10,16 +10,18 @@ public class FauxGravityAttractor : MonoBehaviour {
 	public GameObject object2;
 	public float m1;
 	public float m2;
-
+	public Vector3 com;
+	public Rigidbody rb;
 
 	void Start(){
+		rb = GetComponent<Rigidbody> ();
 		object1 = GameObject.FindGameObjectWithTag("planet");
 		object2 = GameObject.FindGameObjectWithTag("Player");
 		m1 = object1.GetComponent<Rigidbody>().mass;
 		m2 = object2.GetComponent<Rigidbody>().mass;
 		distance = Vector3.Distance(object1.transform.position, object2.transform.position);
 		truegrav = gravity * m1 * m2 / (distance * distance);
-
+		rb.centerOfMass = Vector3(float 0f, float 0f, float 0f);
 	}
 
 	public void Attract(Transform body) {

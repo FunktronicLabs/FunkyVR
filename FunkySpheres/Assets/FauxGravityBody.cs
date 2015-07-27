@@ -9,7 +9,9 @@ public class FauxGravityBody : MonoBehaviour {
 
 	void Start () {
 		GetComponent<Rigidbody>().useGravity = false;
+		Debug.Log ("Player doesn't use gravity");
 		GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+		Debug.Log ("Player's rotate is locked");
 
 		myTransform = transform;
 	}
